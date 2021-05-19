@@ -32,7 +32,7 @@ async function userLogin(reqData, callback) {
     const match = await bcrypt.compare(reqData.password, userCredentials.rows[0].password);
     if (!match) return callback(util.successResponse({ msg: 'User credentials incorrect' }));
 
-    const payload = { email: reqData.email };
+    const payload = { id: reqData.email };
     const token = await generateAuthToken(payload);
 
     callback(util.successResponse({ token, msg: 'User logged in successfully' }));

@@ -4,7 +4,7 @@ let express = require('express'),
     models = require('../dto/models'),
     { validateDto } = require('../middleware/validate-dto');
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
     res.send('Hola! Welcome to antarcticaG server. :-)');
 });
 

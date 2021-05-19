@@ -12,14 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-app.use((req, res, next) => {
-    if (_.isEmpty(req.body)) {
-        return res.status(util.statusCode.FOUR_ZERO_ZERO)
-            .send({ "statusCode": util.statusCode.FOUR_ZERO_ZERO, "statusMessage": 'Bad Request' });
-    }
-    next();
-});
-
 const tokenChecker = (req, res, next) => {
     const token = req.headers.token;
     if (!token) {

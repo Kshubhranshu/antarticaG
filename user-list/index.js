@@ -1,8 +1,10 @@
 let express = require('express'),
     router = express.Router(),
-    service = require('./service');
+    service = require('./service'),
+    { validateDto } = require('../middleware/validate-dto'),
+    { searchUserListSchema } = require('../dto/models');
     
-router.post('/search-user-list', (req, res, next) => {
+router.post('/search-user-list', validateDto(searchUserListSchema), (req, res, next) => {
     service.searchUserList(req.body, (data) => {
         res.send(data);
     }).catch(err => {

@@ -15,9 +15,19 @@ const loginSchema = yup.object().shape({
     password: yup.string().required()
 });
 
-
+const searchUserListSchema = yup.object().shape({
+    query: yup.object({
+        first_name: yup.string().trim().min(1),
+        last_name: yup.string().trim().min(1),
+        employee_id: yup.number().positive(),
+        sort: yup.string().matches(/(first_name|last_name|email|employee_id|organization_name)/),
+        offset: yup.number().min(0),
+        limit: yup.number().positive()
+    })
+});
 
 module.exports = {
     registerSchema,
-    loginSchema
+    loginSchema,
+    searchUserListSchema
 }
