@@ -102,4 +102,4 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 `Here is the postman api collention in order to access the api directly from postman`  [postman-api-collection](https://www.getpostman.com/collections/c7ec9363fa30304f34cb)
-* heroku backend server base url https://antarctica-g.herokuapp.com  
+* heroku backend server base url https://antarctica-g.herokuapp.com/api/v1
