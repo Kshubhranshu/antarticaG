@@ -103,3 +103,34 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 `Here is the postman api collention in order to access the api directly from postman`  [postman-api-collection](https://www.getpostman.com/collections/c7ec9363fa30304f34cb)
 * heroku backend server base url https://antarctica-g.herokuapp.com/api/v1
+
+## Folder Structure
+```
+|-- Procfile
+|-- README.md
+|-- auth (authentication module: login, register)
+|   |-- dao.js
+|   |-- index.js
+|   `-- service.js
+|-- common (common module: contains configuration variables and utility functions)
+|   |-- appConfig.js
+|   |-- db
+|   |   `-- db_schema.sql
+|   |-- dbConfig.js
+|   `-- util.js
+|-- dto (dto module: contains req body validation schemas)
+|   `-- models.js
+|-- env-example
+|-- middleware (middleware module: contains validator for dto schemas)
+|   `-- validate-dto.js
+|-- package-lock.json
+|-- package.json
+|-- routes.js
+|-- routesWithoutAuth.js
+|-- server.js
+`-- user-list (user-list module: search user list)
+    |-- dao.js
+    |-- index.js
+    `-- service.js
+
+```
